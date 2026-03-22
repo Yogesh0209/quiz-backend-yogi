@@ -1,0 +1,38 @@
+### Create a new question
+POST http://localhost:9192/api/questions/create-new-question
+Content-Type: application/json
+
+{
+  "question": "What is the capital of France?",
+  "subject": "Geography",
+  "questionType": "MCQ",
+  "choices": ["Paris", "London", "Berlin", "Rome"],
+  "correctAnswers": ["Paris"]
+}
+
+### Get all questions
+GET http://localhost:9192/api/questions/all-questions
+
+### Get question by ID
+GET http://localhost:9192/api/questions/question/1
+
+### Update a question
+PUT http://localhost:9192/api/questions/question/1/update
+Content-Type: application/json
+
+{
+  "question": "What is the capital of Germany?",
+  "subject": "Geography",
+  "questionType": "MCQ",
+  "choices": ["Paris", "London", "Berlin", "Rome"],
+  "correctAnswers": ["Berlin"]
+}
+
+### Delete a question
+DELETE http://localhost:9192/api/questions/question/1/delete
+
+### Get all subjects
+GET http://localhost:9192/api/questions/subjects
+
+### Fetch random questions for user
+GET http://localhost:9192/api/questions/quiz/fetch-questions-for-user?numOfQuestions=1&subject=Geography
